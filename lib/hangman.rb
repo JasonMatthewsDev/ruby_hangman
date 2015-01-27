@@ -12,7 +12,6 @@ class Hangman
            "if any of them exist in the word they will be displayed."
 
     @word ||= select_word
-    load_pompt if File.exists?('save/save.sv')
     game_loop
   end
 
@@ -87,5 +86,5 @@ class Hangman
     File.open("save/saved.sv", 'w') do |f|
       f.puts YAML.dump(self)
     end
-end
+  end
 end
